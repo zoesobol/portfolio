@@ -5,13 +5,47 @@
 {% block content %}
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-left justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-      
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-left">
+    <div class="hero-container" data-aos="fade-in">
       <h1>Zoe Sobol</h1>
-      <p>I'm a <span class="typed" data-typed-items="Full-Stack Web Developer"></span></p>
-      <a href="{% url 'about' %}" class="btn-about">About Me</a>
+      <p>I'm a <br><span class="typed" data-typed-items="Certified Tech Developer"></span></p>
+      
     </div>
+    <!--
+    <div class="row justify-content-center align-items-center" data-aos="fade-in">
+      <a href="#about" class="btn-get-started scrollto"><i class="bi bi-chevron-double-down"></i></a>
+    </div>-->
   </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      {% include 'about.html' %}
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          </div>
+        {% include 'resume.html' %}
+    </section><!--End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      {% include 'portfolio.html' %}
+    </section><!-- End Portfolio Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      {% include 'contact.html' %}
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
 
 {% endblock %}

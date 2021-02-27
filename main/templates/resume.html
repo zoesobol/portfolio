@@ -1,81 +1,191 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}{% endblock %}
+<link id="theme-style" rel="stylesheet" href="{% static 'css/devresume.css' %}">
 
-{% block content %}
 
-  <main id="main">
+<body>
+	<div class="main-wrapper">
+		<div class="container px-3 px-lg-5">
+			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
+				
+				<div class="resume-header">
+					<div class="row align-items-center">
+						<!--<div class="resume-photo col-12 col-md-2 col-lg-2 col-xl-2">
+							<img src="{% static 'img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+						</div>-->
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+							<h2 class="resume-name mb-0 text-uppercase">Zoe V. Ernst Sobol</h2>
+							<div class="resume-tagline mb-3 mb-md-0">Certified Tech Developer</div>
+						</div><!--//resume-title-->
+						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<ul class="list-unstyled mb-0">
+								<li class="mb-2"><i class="icofont-phone"></i><a class="resume-link" href="tel:#"> +54 9 364-4543611</a></li>
+								<li class="mb-2"><i class="icofont-email"></i><a class="resume-link" href="mailto:#"> zoesobol98@gmail.com</a></li>
+								<li class="mb-2"><i class="icofont-google-map"></i></i> Chaco, Arg.</li>
+							</ul>
+						</div><!--//resume-contact-->
+					</div><!--//row-->
+					
+				</div><!--//resume-header-->
+				<hr>
+				<div class="resume-intro py-3">
+					<div class="row align-items-center">
+						<div class="col-12 col-md-2 col-lg-2 col-xl-2">
+							<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto img-fluid rounded-circle" src="{% static 'img/profile-img.jpg' %}" alt="">
+						</div>
+						<div class="text-left col-12 col-md-10 col-lg-10 col-xl-10">
+							<p class="mb-0">Detail-oriented Full Stack Developer familiar with wide range of programming utilities and languages. 
+								Knowledgeable of backend and frontend development requirements. Experienced in Python, Django and JavaScript. 
+								Fluent in English and accustomed to working with cross-cultural, global teams.
+								Collaborative team player, eager to learn new technologies. </p>
+						</div><!--//media-body-->
+					</div>
+				</div><!--//resume-intro-->
+				<hr>
+				<div class="resume-body">
+					<div class="row">
+						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Web Developer & Community Manager</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Trailer Park Grow | 2020 - Present</div>
+										
+									</div>
+									<div class="item-content">
+										<!--<p>Role description goes here.</p>-->
+										<ul class="resume-list">
+											<li>Planned website development, converting mockups into usable web presence with Python, Django and JavaScript coding</li>
+											<li>Determined coding requirements for site creation, including e-commerce capability.</li>
+											<li>Increased customer engagement through social media.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
+								
+							</section><!--//work-section-->
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>Full-Stack Developer equipped with a diverse and promising skill-set. Proficient in an assortment of
-            technologies, including Python, Django, Javascript, HTML and CSS. Able to effectively collaborate in a
-            team setting. Eager to learn new technologies.
-            </p>
-        </div>
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Certified Tech Developer</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Digital House | Mar. 2021 - Present</div>
+										
+									</div>
+									<div class="item-content">
+										<p>Two year career, thought and designed by <strong>Mercado Libre</strong> and <strong>Globant</strong> along with <strong>Digital House</strong>, where we apply <strong>technical knowledge</strong> and a series of fundamental <strong>soft skills</strong> in order to insert ourselves in the job market.</p>
+										<ul class="resume-list">
+											<li>2200 hours of training.</li>
+											<li>Technologies used: JavaScript, Java, SQL, Git.</li>
+											<li>Soft skills training: Learning Agility. Collaboration & team work. Time management. Effective communication.</li>
+										</ul>
+									</div>
+								</div><!--//item-->
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Zoe Sobol</h4>
-              <p><em>Innovative Full-Stack Web Developer and Designer with experience developing web apps in Python, Django, Javascript, HTML and CSS.</em></p>
-              <p>
-              <ul>
-                <li>Presidencia Roque Sáenz Peña, Chaco, Arg.</li>
-                <li>+54 9 364-4543611</li>
-                <li>zoesobol98@gmail.com</li>
-              </ul>
-              </p>
-            </div>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Web Development Bootcamp</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Informatorio | Nov. 2020 - Mar. 2021</div>
+										
+									</div>
+									<div class="item-content">
+										<p>Four month bootcamp designed by <strong>Globant</strong> and <strong>Polo IT</strong> where we developed web applications using Python and Django with databases such as SQLite.</p>
+									</div>
+								</div><!--//item-->
+							</section><!--//education-section-->
 
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Web Developer & Community Manager</h4>
-              <h5>2020 - Present</h5>
-              <p><em>Trailer Park Grow</em></p>
-              <p>
-              <ul>
-                <li>Developed an e-commerce website for the company.</li>
-                <li>Dedicated to managing social media.</li>
-                <li>Handled communication with customers.</li>
-              </ul>
-              </p>
-            </div>
+							
+							<section class="project-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Amada Mascota</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Feb. 2021</div>
+										
+									</div>
+									<div class="item-content">
+										<p>Project for Informatorio's web development bootcamp. Made with Python and Django using SQLite. <a href="https://www.amadamascota.herokuapp.com" class="theme-link">Link</a>.</p>
+										
+										
+									</div>
+								</div><!--//item-->
+								<div class="item">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Trailer Park Grow Website</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Dec. 2020 - Present</div>
+										
+									</div>
+									<div class="item-content">
+										<p>E-commerce website made with Python and Django using SQLite. <a href="https://www.trailerparkgrow.herokuapp.com" class="theme-link">Link</a>.</p>
+										
+									</div>
+								</div><!--//item-->
+								<div class="item">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Personal Portfolio / Resume website</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Jan. 2021 - Present</div>
+										
+									</div>
+									<div class="item-content">
+										<p>Personal landing page made with Python and Django using SQLite. JavaScript for the front end. <a href="https://www.zoesobol.herokuapp.com" class="theme-link">Link</a>.</p>
+										
+									</div>
+								</div><!--//item-->
+							</section><!--//project-section-->	
+						</div><!--//resume-main-->
+						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+							<section class="skills-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
+								<div class="item">
 
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Certified Tech Developer</h4>
-              <h5>2021 - Present</h5>
-              <p><em>MercadoLibre & Globant</em></p>
-              <p>Two-year career</p>
-            </div>
-            <div class="resume-item">
-              <h4>Web Development Course</h4>
-              <h5>2020</h5>
-              <p><em>Informatorio - Globant, Polo IT, UTN, UNCAus</em></p>
-              <p>4-month course that teaches Web Development using techonologies such as Python, Django and SQL.</p>
-            </div>
-            <div class="resume-item">
-              <h4>First Certificate in English</h4>
-              <h5>2014</h5>
-              <p><em>Cambridge University</em></p>
-              <p>Obtained a grade A. (86%)</p>
-            </div>
-            
+									<ul class="list-unstyled resume-skills-list">
+										<li class="mb-2">JavaScript/Angular/React/Vue</li>
+										<li class="mb-2">Python/Ruby/PHP<li>
+											<li class="mb-2">Node.js/ASP.NET</li>
+											<li class="mb-2">PostgreSQL/MySQL</li>
+											<li class="mb-2">Object-oriented design</li>
+											<li class="mb-2">Design and implement database structures</li>
+											<li>Lead and deliver complex software systems</li>
+										</ul>
+									</div><!--//item-->
+									</section><!--//skills-section-->
 
-          </div>
-        </div>
+									<section class="skills-section py-3">
+									<h3 class="text-uppercase resume-section-heading mb-4">Strengths</h3>
+										<div class="item">
 
-      </div>
-    </section><!-- End Resume Section -->
+											<ul class="list-unstyled resume-skills-list">
+												<li class="mb-2">Effective communication</li>
+												<li class="mb-2">Team player<li>
+													<li class="mb-2">Strong problem solver</li>
+													<li>Good time management</li>
+												</ul>
+											</div><!--//item-->
+										</section><!--//skills-section-->									
 
-  </main><!-- End #main -->
+									<section class="skills-section py-3">
+										<h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
+										<ul class="list-unstyled resume-lang-list">
+											<li class="mb-2">Spanish <span class="text-muted">(Native)</span></li>
+											<li>English <span class="text-muted">(Full Professional Proficiency)</span></li>
+										</ul>
+									</section><!--//certificates-section-->
 
-{% endblock %}
+									<section class="skills-section py-3">
+										<h3 class="text-uppercase resume-section-heading mb-4">English Certificates</h3>
+										<ul class="list-unstyled resume-lang-list">
+											<li class="mb-2">First Certificate in English <br> <span class="text-muted">Pass with Grade A. Level C1.</span></li>
+											<li>Preliminary English Test <br> <span class="text-muted">Pass with Distinction.</span></li>
+										</ul>
+									</section><!--//certificates-section-->									
+									
+								</aside><!--//resume-aside-->
+							</div><!--//row-->
+						</div><!--//resume-body-->
+						
+					</article>
+					
+				</div><!--//container-->
+            </div><!--//main-wrapper-->
+</body>
