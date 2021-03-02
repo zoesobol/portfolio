@@ -175,6 +175,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# Get Startet Button
+--------------------------------------------------------------*/
+.get-started-btn {
+  margin-left: 50%;
+  background: #222831;
+  color: #eeeeee !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  padding: 12px 40px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.get-started-btn:hover {
+  background: #e94560;
+  color: #eeeeee;
+}
+
+.get-started-btn a:hover i, .nav-menu .active i, .nav-menu li:hover > a i {
+  color: #eeeeee !important;
+}
+
+@media (max-width: 992px) {
+  .get-started-btn {
+    margin: 0 15px 0 0;
+    padding: 6px 18px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
@@ -192,6 +226,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   white-space: nowrap;
 }
+
 
 .nav-menu a {
   display: flex;

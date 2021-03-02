@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'anc_scc#t0oc1xgsi7*8^2l0g%xirunf*8ah=bpt)3q3(o*t1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['zoesobol.herokuapp.com']
 
@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['zoesobol.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'blog',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -130,5 +134,15 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
