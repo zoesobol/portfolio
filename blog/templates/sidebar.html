@@ -1,0 +1,46 @@
+{% load static %}
+{% load blog_tags %}
+
+<div class="sidebar">
+
+    <h3 class="sidebar-title">Categories</h3>
+    <div class="sidebar-item categories">
+      {% get_categories as category_list %}
+      <ul>
+        {% for category in category_list %}
+        <li><a href="#">{{ category.name }}<span>({{category.post_set.count}})</span></a></li>
+        {% endfor %}
+      </ul>
+    </div><!-- End sidebar categories-->
+
+    <h3 class="sidebar-title">Recent Posts</h3>
+    <div class="sidebar-item recent-posts">
+      {% get_recent_posts as recent_post_list %}
+      {% for post in recent_post_list %}
+      <div class="post-item clearfix">
+        <img src="{{ post.header_image.url }}" alt="">
+        <h4><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h4>
+        <time datetime="2020-01-01">{{ post.post_date }}</time>
+      </div>
+      {% endfor %}
+
+    </div><!-- End sidebar recent posts-->
+<!--
+    <h3 class="sidebar-title">Tags</h3>
+    <div class="sidebar-item tags">
+      <ul>
+        <li><a href="#">App</a></li>
+        <li><a href="#">IT</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Mac</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Office</a></li>
+        <li><a href="#">Creative</a></li>
+        <li><a href="#">Studio</a></li>
+        <li><a href="#">Smart</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">Marketing</a></li>
+      </ul>
+    </div>--><!-- End sidebar tags-->
+
+  </div><!-- End sidebar -->

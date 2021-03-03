@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}Blog |{% endblock%}
+
+{% block styles %}
+<link href="{% static 'css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<!--
+  <header id="headerr" class="d-none d-md-flex fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+      </div>
+
+      <nav id="navbarr" class="navbarr">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>-->
+
+<main id="main">
+
+    <!-- ======= Blog Header ======= -->
+    <div class="header-bg page-area">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="slider-content text-center">
+              <div class="header-bottom">
+                <div class="layer2">
+                  <h1 class="title2" style="font-size: 5rem;">ZOE'S BLOG</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Blog Header -->
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding">
+      <div class="container">
+
+          <div class="col-md-8 col-sm-8 col-xs-12 align-items-center justify-content-center" style="margin-left: auto; margin-right: auto;">
+            <div class="row">
+              {% for post in object_list %}
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="{% url 'post-detail' post.pk %}">
+                      <img src="{{ post.header_image.url }}" alt="">
+                    </a>
+                  </div>
+                  
+                  <div class="blog-text">
+                    <h4>
+                      <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
+                    </h4>
+                  </div>
+
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                    <span class="comments-type">
+                      <a href="#">{{ post.category }}</a>
+                    </span>
+                    <span class="comments-type">
+                      <i class="bi bi-chat"></i>
+                      <a href="#">11 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="bi bi-calendar"></i>
+                      {{ post.post_date }}
+                    </span>
+                  </div>
+
+                  <div class="blog-text">
+                    <p class="text-justify">
+                      {{ post.body|truncatewords:50|safe }}
+                    </p>
+                  </div>
+                  <span>
+                    <a href="{% url 'post-detail' post.pk %}" class="ready-btn">Read more</a>
+                    <br><br><br>
+                  </span>
+                </div>
+              </div>
+              
+              {% endfor %}
+              <!-- End single blog -->
+              
+
+              <!--<div class="blog-pagination">
+                <ul class="pagination align-items-center justify-content-center">
+                  <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="page-item"><a href="#" class="page-link">3</a></li>
+                  <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>--><!-- End Blog Page -->
+
+  </main><!-- End #main -->
+
+
+{% endblock%}

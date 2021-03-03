@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'anc_scc#t0oc1xgsi7*8^2l0g%xirunf*8ah=bpt)3q3(o*t1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['zoesobol.herokuapp.com']
 

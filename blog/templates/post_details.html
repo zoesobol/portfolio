@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}{{ post.title }} |{% endblock%}
+
+{% block styles %}
+<link href="{% static 'css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+              <div class="entry-img">
+                <img src="{{ post.header_image.url }}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                {{ post.title }}
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'home'%}#about">{{ post.author.first_name }} {{ post.author.last_name }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i>{{ post.post_date }}</li>
+                  <!--<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>-->
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                {{ post.body|safe }}
+              </div>
+<!--
+              <div class="entry-footer">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Business</a></li>
+                </ul>
+
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  <li><a href="#">Creative</a></li>
+                  <li><a href="#">Tips</a></li>
+                  <li><a href="#">Marketing</a></li>
+                </ul>
+              </div>-->
+
+            </article><!-- End blog entry -->
+
+            <div class="blog-author d-flex align-items-center">
+              <img src="{% static 'img/profile-img.jpg' %}" class="rounded-circle float-left" alt="">
+              <div>
+                <h4>{{ post.author.first_name }} {{ post.author.last_name }}</h4>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/zoesobol/"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.github.com/zoesobol/"><i class="bi bi-github"></i></a>
+                  <a href="https://www.twitter.com/zoesobol_"><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.instagram.com/zoesobol_"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                    Full Stack Developer experienced in Python, Django and JavaScript. 
+                    Collaborative team player, eager to learn new technologies.
+                </p>
+              </div>
+            </div><!-- End blog author bio -->
+
+            <div class="blog-comments">
+            {% if not post.comments.all %}
+
+              <h4 class="comments-count">No comments yet</h4>
+            
+            {% else %}
+
+              <h4 class="comments-count">{{ object.number_of_comments }} Comments</h4>
+            
+              {% for comment in post.comments.all %}
+
+              <div id="comment-1" class="comment">
+                <div class="d-flex">
+                  
+                  <div>
+                    <h5>{{ comment.name }}</h5> <time datetime="2020-01-01">{{ comment.comment_date }}</time>
+                    
+                    {{ comment.body|safe }}
+
+                  </div>
+                </div>
+              </div>
+
+            {% endfor %}
+            
+            {% endif %}
+
+
+
+
+
+              <div class="reply-form">
+                <h4>Leave a Reply</h4>
+                <p>Your email address will not be published. Required fields are marked * </p>
+                <form  method="POST" role="form">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                        {{ form.name.errors }}
+                        {{ form.name }}
+                      <!--<input name="name" type="text" class="form-control" placeholder="Your Name*">-->
+                    </div>
+                    <div class="col-md-6 form-group">
+                        {{ form.email.errors }}
+                        {{ form.email }}
+                      <!--<input name="email" type="text" class="form-control" placeholder="Your Email*">-->
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col form-group">
+                        {{ form.body.errors }}
+                        {{ form.body }}
+                      <!--<textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>-->
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Post Comment</button>
+
+                </form>
+
+              </div>
+
+            </div><!-- End blog comments -->
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            {% include 'sidebar.html' %}
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

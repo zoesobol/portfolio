@@ -9,109 +9,71 @@
 
 {% block content %}
 
-  <header id="headerr" class="d-none d-md-flex fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+  <main id="main">
 
-      <div class="logo">
-      </div>
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
 
-      <nav id="navbarr" class="navbarr">
-        <ul>
-          <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-<main id="main">
-
-    <!-- ======= Blog Header ======= -->
-    <div class="header-bg page-area">
-      <div class="container position-relative">
         <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="slider-content text-center">
-              <div class="header-bottom">
-                <div class="layer2">
-                  <h1 class="title2" style="font-size: 5rem;">ZOE'S BLOG</h1>
-                </div>
+
+          <div class="col-lg-8 entries">
+
+        {% for post in object_list %}
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="{{ post.header_image.url }}" alt="" class="img-fluid">
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Blog Header -->
 
-    <!-- ======= Blog Page ======= -->
-    <div class="blog-page area-padding">
-      <h1>Comming soon</h1>
-    </div>
-    <!--<div class="blog-page area-padding">
-      <div class="container">
+              <h2 class="entry-title">
+                <a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
+              </h2>
 
-          <div class="col-md-8 col-sm-8 col-xs-12 align-items-center justify-content-center" style="margin-left: auto; margin-right: auto;">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog-details.html">
-                      <img src="{% static 'img/blog/1.jpg' %}" alt="">
-                    </a>
-                  </div>
-                  
-                  <div class="blog-text">
-                    <h4>
-                      <a href="#">Post my imagine Items</a>
-                    </h4>
-                  </div>
-
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                      <i class="bi bi-chat"></i>
-                      <a href="#">11 comments</a>
-                    </span>
-                    <span class="date-type">
-                      <i class="bi bi-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                  </div>
-
-                  <div class="blog-text">
-                    <p>
-                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
-                    </p>
-                  </div>
-                  <span>
-                    <a href="blog-details.html" class="ready-btn">Read more</a>
-                  </span>
-                </div>
-              </div>-->
-              <!-- End single blog -->
-              
-
-              <!--<div class="blog-pagination">
-                <ul class="pagination align-items-center justify-content-center">
-                  <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
-                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                  <li class="page-item"><a href="#" class="page-link">2</a></li>
-                  <li class="page-item"><a href="#" class="page-link">3</a></li>
-                  <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"> <a href="#">{{ post.category }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">{{ post.post_date }}</time></a></li>
+                  <!--<li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">12 Comments</a></li>-->
                 </ul>
               </div>
+
+              <div class="entry-content">
+                {{ post.body|truncatewords:50|safe }}
+                <div class="read-more">
+                  <a href="{% url 'post-detail' post.pk %}">Read More</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+
+            {% endfor %}
+
+
+
+
+            <div class="blog-pagination">
+              <ul class="justify-content-center">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+              </ul>
             </div>
-          </div>
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            {% include 'sidebar.html' %}
+
+          </div><!-- End blog sidebar -->
+
         </div>
+
       </div>
-    </div>--><!-- End Blog Page -->
+    </section><!-- End Blog Section -->
 
   </main><!-- End #main -->
 
 
-{% endblock%}
+{% endblock %}
