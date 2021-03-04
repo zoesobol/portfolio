@@ -34,7 +34,7 @@ class Post(models.Model):
 		return reverse('blog')
 
 class Comment(models.Model):
-	post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+	post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE, null=True)
 	name = models.CharField(max_length=100)
 	email = models.EmailField(max_length=100)
 	body = models.TextField()

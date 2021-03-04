@@ -34,9 +34,14 @@ class PostDetailView(DetailView):
 		form = self.form_class(request.POST)
 		if form.is_valid():
 			# <process form cleaned data>
+			new_comment = form.save(commit=False)
+			new_comment.post = self.get_object()
+			new_comment = form.save()
 			return HttpResponseRedirect(self.request.path_info)
 
 		return render(request, self.template_name, {'form': form})
+
+
 
 """
 class PostDetailView(DetailView):

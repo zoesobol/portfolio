@@ -1,20 +1,18 @@
 from django.shortcuts import render
+from main.models import Contact
+from main.forms import ContactForm
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html', {})
-
-def about(request):
-    return render(request, 'about.html', {})
-
-def contact(request):
-    return render(request, 'contact.html', {})
-
-def portfolio(request):
-    return render(request, 'portfolio.html', {})
-
-def resume(request):
-    return render(request, 'resume.html', {})
-
-def portfolio_details(request):
-    return render(request, 'portfolio-details.html', {})
+    if request.method == 'POST':
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('OK')
+    else:
+        form = ContactForm()
+        context = {
+            'form':form,
+        }
+    return render(request, 'home.html', {'form':form})
