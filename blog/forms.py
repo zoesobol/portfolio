@@ -2,11 +2,15 @@ from django import forms
 from .models import Post, Category, Comment
 
 #para generar el dropdown de las categorías
-choices = Category.objects.all().values_list('name','name')
 
-choice_list = []
-for item in choices:
-	choice_list.append(item)
+def choice_list():
+	choices = Category.objects.all().values_list('name','name')
+
+	choice_list = []
+	for item in choices:
+		choice_list.append(item)
+	
+	return choice_list
 
 
 
@@ -18,7 +22,7 @@ class PostForm(forms.ModelForm):
 		widgets = {
 			'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Insert title'}),
 			'author': forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'elder', 'type':'hidden'}),
-			'category': forms.Select(choices=choice_list, attrs={'class': 'form-select'}),
+			'category': forms.Select(choices=choice_list(), attrs={'class': 'form-select'}),
 			'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Insert text'}),
 
 		}
@@ -35,3 +39,4 @@ class CommentForm(forms.ModelForm):
 			'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Insert text', 'rows':'5'}),
 
 		}
+
