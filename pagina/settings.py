@@ -27,7 +27,8 @@ SECRET_KEY = 'anc_scc#t0oc1xgsi7*8^2l0g%xirunf*8ah=bpt)3q3(o*t1d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zoesobol.herokuapp.com']
+ALLOWED_HOSTS = ['zoesobol.herokuapp.com',
+    '*']
 
 
 # Application definition
